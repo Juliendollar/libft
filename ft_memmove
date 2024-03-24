@@ -1,7 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <stddef.h>
+#include "libft.h"
 
 void * ft_memmove( void *destination, const void *source, size_t size )
 {
@@ -29,6 +27,7 @@ void * ft_memmove( void *destination, const void *source, size_t size )
     }
     return(destination);
 }
+/*#include <stdio.h>
 
 int main(void)
 {
@@ -38,4 +37,4 @@ int main(void)
     printf("destination = %s \nsource = %s\n", destination, source);
     ft_memmove(destination, source, 12);
     printf("destination = %s \nsource = %s\n", destination, source);
-}
+}*/
