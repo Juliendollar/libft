@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stddef.h>
+
+void * ft_memmove( void *destination, const void *source, size_t size )
+{
+    unsigned char *dest;
+    dest = (unsigned char *)destination;
+    const unsigned char *src;
+    src = (const unsigned char *)source;
+    size_t i;
+
+    i = -1;
+    if (dest == src)
+        return (destination);
+    if (dest < src)
+    {
+        while(i++ < size)
+            dest[i] = src[i];
+    }
+    else
+    {
+        while(size > 0)
+        {
+            dest[size -1] = src[size -1];
+            size--;
+        }
+    }
+    return(destination);
+}
+
+int main(void)
+{
+    char destination[20] = {0};
+    char *source = "JULIEN";
+
+    printf("destination = %s \nsource = %s\n", destination, source);
+    ft_memmove(destination, source, 12);
+    printf("destination = %s \nsource = %s\n", destination, source);
+}
