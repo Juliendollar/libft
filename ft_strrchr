@@ -1,0 +1,27 @@
+#include "libft.h"
+
+char * ft_strrchr( const char * str, int c )
+{
+    unsigned int i;
+
+    i = ft_strlen(str) -1;
+    while (i > 0)
+    {
+        if (str[i] == c)
+            return ((char *)str + i);
+        i--;
+    }
+    if (c == 0 && str[i] == 0)
+        return ((char *)str + i);
+    return (0);
+}
+/*int main(void)
+{
+    char *str = "test";
+    int c = 't';
+    printf("%p\n", &str[0]);
+    printf("%p\n", &str[1]);
+    printf("%p\n", &str[2]);
+    printf("%p\n", &str[3]);
+    printf("le pointeur de strrchr %p", ft_strrchr(str, c));
+}*/
