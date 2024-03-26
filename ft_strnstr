@@ -1,0 +1,22 @@
+#include <stddef.h>
+#include "libft.h"
+
+char *ft_strnstr(const char *f, const char *a, size_t len)
+{
+    size_t i;
+    size_t j;
+    
+    i = 0;
+    if (a[i] == 0)
+            return ((char *)f);
+    while (f[i] && i < len)
+    {
+        j = 0;
+        while (f[i + j] == a[j] && i + j < len)
+            j++;
+        if (a[j] == 0)
+            return ((char *)&f[i]);
+        i++;
+    }
+    return (NULL);
+}
