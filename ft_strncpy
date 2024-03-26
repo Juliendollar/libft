@@ -1,0 +1,35 @@
+#include "libft.h"
+#include <string.h>
+
+int ft_strlen(char *str)
+{
+    int i = 0;
+    while (str[i])
+        i++;
+    return (i);
+}
+char *ft_strncpy (char *dest, const char * src, size_t len)
+{
+    size_t i;
+
+    i = 0;
+    while (src[i] && i < len)
+        {
+            dest[i] = src[i];
+            i++;
+        }
+    while (i < len)
+    {
+        dest[i] = 0;
+        i++;
+    }
+    return (dest);
+}
+/*#include <stdio.h>
+
+int main(void)
+{
+    char dest[20] = "julien";
+    char *src = "test";
+    printf("%s", ft_strncpy(dest, src, 5));
+}*/
