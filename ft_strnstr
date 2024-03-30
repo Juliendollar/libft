@@ -1,7 +1,6 @@
-#include <stddef.h>
 #include "libft.h"
 
-char *ft_strnstr(const char *f, const char *a, size_t len)
+char *ft_strnstr(const char *f, const char *a, size_t n)
 {
     size_t i;
     size_t j;
@@ -9,10 +8,10 @@ char *ft_strnstr(const char *f, const char *a, size_t len)
     i = 0;
     if (a[i] == 0)
             return ((char *)f);
-    while (f[i] && i < len)
+    while (f[i] && i < n)
     {
         j = 0;
-        while (f[i + j] == a[j] && i + j < len)
+        while (f[i + j] == a[j] && i + j < n)
             j++;
         if (a[j] == 0)
             return ((char *)&f[i]);
