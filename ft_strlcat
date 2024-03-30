@@ -1,7 +1,6 @@
 #include "libft.h"
-#include <stddef.h>
 
-size_t ft_strlcat(char *dst, const char *src, size_t size)
+size_t ft_strlcat(char *dest, const char *src, size_t n)
 {
     size_t i;
     size_t j;
@@ -9,28 +8,28 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
     j = 0;
     i = 0;
     if (!src)
-        return (ft_strlen(dst));
-    else if (!dst)
+        return (ft_strlen(dest));
+    else if (!dest)
         return (ft_strlen(src));
     else
     {
-        while (i < size && dst[i])
+        while (i < n && dest[i])
             i++;
-        while (src[j] && i + j + 1 < size)
+        while (src[j] && i + j + 1 < n)
         {
-            dst[i + j] = src[j];
+            dest[i + j] = src[j];
             j++;
         }
-        if (i < size)
-            dst[i + j] = 0;
-        return (ft_strlen(dst) + ft_strlen(src));
+        if (i < n)
+            dest[i + j] = 0;
+        return (ft_strlen(dest) + ft_strlen(src));
     }
 }
 /*int main(void)
 {
-    char dst[20] = "Hello ";
+    char dest[20] = "Hello ";
     char *src = "Ju";
 
-    ft_strlcat(dst, src, 8);
+    ft_strlcat(dest, src, 8);
     printf("%s", dst);
 }*/
