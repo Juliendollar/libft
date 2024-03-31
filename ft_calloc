@@ -1,0 +1,18 @@
+#include "libft.h"
+
+void *ft_calloc(size_t nmemb, size_t n)
+{
+    char *tmp;
+    size_t i;
+    
+    i = 0;
+    tmp = malloc(nmemb * n);
+    if (!tmp)
+        return (0);
+    while (i < nmemb *size)
+    {
+        tmp[i] = 0;
+        i++;
+    }
+    return (tmp);
+}
