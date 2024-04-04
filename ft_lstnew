@@ -1,0 +1,12 @@
+#include "libft.h"
+
+t_list *ft_lstnew(void *content)
+{
+    t_list *NewNode;
+    NewNode = malloc(sizeof(t_list));
+    if (!NewNode)
+        return (0);
+    NewNode -> content = content;
+    NewNode -> next = 0;
+    return (NewNode);
+}
