@@ -1,0 +1,23 @@
+#include "libft.h"
+
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+    t_list *current;
+    t_list *new;
+    int count;
+    
+    current = lst;
+    if (lst)
+    {
+        count = ft_lstsize(lst);
+        map = malloc(sizeof(lst) * count);
+        if (!map)
+            return (0);
+    }
+    while (current)
+    {
+        new -> content = f(current->content);
+        new -> next = current -> next;
+        free(current);
+    }
+}
