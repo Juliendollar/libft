@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void ft_putendl_fd(char *str, in d)
+void ft_putendl_fd(char *str, int fd)
 {
     if (!str)
 		return (0);
